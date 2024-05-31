@@ -22,7 +22,7 @@ const App = () => {
     const newTask = { title, description, status: 'Pending' };
     await axios.post('http://localhost:5000/tasks', newTask);
     fetchTasks();
-    
+
     setTitle('');
     setDescription('');
   };
@@ -38,10 +38,9 @@ const App = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Dynamic To-Do List</h1>
       <div className="flex space-x-4">
-        <div className="w-1/3">
-          <h2 className="text-2xl mb-2">Pending</h2>
+        <div className="w-1/3 border-black border-4 p-5">
+        <h2 className="text-3xl font-bold mb-4 border-black border-b-4 ">To-Do List</h2>
           <div>
             <input
               type="text"
@@ -64,16 +63,16 @@ const App = () => {
             ))}
           </div>
         </div>
-        <div className="w-1/3">
-          <h2 className="text-2xl mb-2">In Progress</h2>
+        <div className="w-1/3 border-black border-4 ">
+          <h2 className="text-2xl  border-black border-b-4 p-5 bg-green-200">In Progress</h2>
           <div>
             {tasks.filter(task => task.status === 'In Progress').map(task => (
               <Task key={task._id} task={task} moveTask={moveTask} />
             ))}
           </div>
         </div>
-        <div className="w-1/3">
-          <h2 className="text-2xl mb-2">Completed</h2>
+        <div className="w-1/3 border-black border-4">
+          <h2 className="text-2xl mb-2 border-black border-b-4 p-5">Completed</h2>
           <div>
             {tasks.filter(task => task.status === 'Completed').map(task => (
               <Task key={task._id} task={task} moveTask={moveTask} />
