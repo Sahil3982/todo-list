@@ -64,7 +64,7 @@ const App = () => {
           </div>
         </div>
         <div className="w-1/3 border-black border-4 rounded-lg ">
-          <h2 className="  border-black border-b-4 p-2">In Progress</h2>
+          <h2 className="  border-black border-b-4 p-2">Inprogress</h2>
           <div>
             {tasks.filter(task => task.status === 'In Progress').map(task => (
               <Task key={task._id} task={task} moveTask={moveTask} />
@@ -72,7 +72,7 @@ const App = () => {
           </div>
         </div>
         <div className="w-1/3 border-black border-4 rounded-lg">
-          <h2 className="mb-2 border-black border-b-4 p-2">Completed</h2>
+          <h2 className="mb-2 border-black border-b-4 p-2">Done </h2>
           <div>
             {tasks.filter(task => task.status === 'Completed').map(task => (
               <Task key={task._id} task={task} moveTask={moveTask} />
