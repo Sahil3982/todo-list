@@ -6,9 +6,9 @@ This project is a dynamic to-do list application built using the MERN stack (Mon
 
 ### Backend Setup
 
-1. Navigate to the `server` directory:
+1. Navigate to the `api` directory:
     ```bash
-    cd server
+    cd api
     ```
 
 2. Install dependencies:
