@@ -39,23 +39,23 @@ const App = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="flex space-x-4">
-        <div className="w-1/3 border-black border-4 p-5">
-        <h2 className="text-3xl font-bold mb-4 border-black border-b-4 ">To-Do List</h2>
+        <div className="w-1/3 border-black border-4 p-5 rounded-lg">
+        <h2 className=" font-bold mb-4 border-black border-b-4 ">To-Do 1 issue</h2>
           <div>
             <input
               type="text"
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="border p-2 w-full mb-2"
+              className="border p-1 w-full mb-2 rounded-lg"
             />
             <textarea
               placeholder="Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="border p-2 w-full mb-2"
+              className="border p-1 w-full mb-2 rounded-lg"
             />
-            <button onClick={addTask} className="bg-blue-500 text-white p-2 w-full">Add Task</button>
+            <button onClick={addTask} className="bg-blue-500 rounded-lg text-white p-2 w-full">Add Task</button>
           </div>
           <div>
             {tasks.filter(task => task.status === 'Pending').map(task => (
@@ -63,16 +63,16 @@ const App = () => {
             ))}
           </div>
         </div>
-        <div className="w-1/3 border-black border-4 ">
-          <h2 className="text-2xl  border-black border-b-4 p-5 bg-green-200">In Progress</h2>
+        <div className="w-1/3 border-black border-4 rounded-lg ">
+          <h2 className="  border-black border-b-4 p-2">In Progress</h2>
           <div>
             {tasks.filter(task => task.status === 'In Progress').map(task => (
               <Task key={task._id} task={task} moveTask={moveTask} />
             ))}
           </div>
         </div>
-        <div className="w-1/3 border-black border-4">
-          <h2 className="text-2xl mb-2 border-black border-b-4 p-5">Completed</h2>
+        <div className="w-1/3 border-black border-4 rounded-lg">
+          <h2 className="mb-2 border-black border-b-4 p-2">Completed</h2>
           <div>
             {tasks.filter(task => task.status === 'Completed').map(task => (
               <Task key={task._id} task={task} moveTask={moveTask} />
